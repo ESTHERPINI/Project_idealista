@@ -11,6 +11,7 @@
 5. munimadrid datos - criminality
 6. munimadrid datos - Real State information
 7. Data Preprocessing 'limpieza'
+8. modelos pruebas
 
 
 
@@ -57,6 +58,21 @@ Data Preprocessing - limpieza
 In this Jupyter we'll load all the dataframes and make the data preprocessing, Exploratory Data Analyis and merge of the differentent dataframes. 
 Finally we saved this data in an excel file for later processing of differen MODELS.
 ```../Project/output/project_dataset.xls```
+
+Modelos Pruebas
+------
+In this Jupyter file we will make following process:
+* Feature Observation.
+* Feature Selecction.
+* Model Building.
+* Model Performances.
+* Train-Test.
+* Prediction.
+* Final Score.
+* Choose best model.
+
+
+* 
 
 
 
