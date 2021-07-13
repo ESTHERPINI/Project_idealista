@@ -5,8 +5,14 @@
 ## Table of contents
 
 1. Motivation
-2. Data research
+2. Data Research
 3. API request Idealista
+4. wikipedia
+5. munimadrid datos - criminality
+6. munimadrid datos - Real State information
+7. Data Preprocessing 'limpieza'
+
+
 
 
 Motivation
@@ -32,14 +38,27 @@ Inside a .py doc calles apis.py we create a function called `def api_idealista(a
 Idealista sent helps documentation aswell, saved on **idealista_api_doc** folder.
 After that we will save the dataframe in an csv file **/Project/input/idealista.csv**
 
-WIKIPEDIA 
+wikipedia 
 -----
 We use the *pandas method* `` table_MN = pd.read_html(url)``, to get the information from [wikipedia](https://es.wikipedia.org/wiki/Demograf%C3%ADa_de_Madrid) about the population in Madrid by districts. 
 
-MUNIMADRID
+munimadrid datos - criminality
 ----
 We'll get criminality information from the POLICIA MUNICIPAL in [munimadrid.es](https://datos.madrid.es/egob/catalogo/212616-89-policia-estadisticas.xlsx)
-Final results will be saved in an excel file for later merge ``../Project/output/criminalidad_distrito.xls``
+Final results will be saved in an excel file for later merge ```../Project/output/criminalidad_distrito.xls```
+
+munimadrid datos - Real State information
+----
+We import a saved function ``src.apis import import_excel``` for getting excel data information about the Real State market in Madrid. This information we'll help us to check if the values we are mananing have sense.
+
+Data Preprocessing - limpieza
+----
+
+In this Jupyter we'll load all the dataframes and make the data preprocessing, Exploratory Data Analyis and merge of the differentent dataframes. 
+Finally we saved this data in an excel file for later processing of differen MODELS.
+```../Project/output/project_dataset.xls```
+
+
 
 
 
