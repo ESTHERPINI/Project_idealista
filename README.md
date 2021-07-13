@@ -11,9 +11,9 @@
 5. munimadrid datos - criminality
 6. munimadrid datos - Real State information
 7. Data Preprocessing 'limpieza'
-8. modelos pruebas
-
-
+8. Modelos Pruebas
+9. Final Model
+10. Streamlit
 
 
 Motivation
@@ -71,10 +71,17 @@ In this Jupyter file we will make following process:
 * Final Score.
 * Choose best model.
 
-
-* 
-
+![image](https://user-images.githubusercontent.com/73304043/125522632-3f25fed4-c301-468e-8c83-89b17e587ae7.png)
 
 
+Final Model
+----
+![image](https://user-images.githubusercontent.com/73304043/125522306-35cfa7cb-31ed-4ff6-acae-4bdfdb2b993e.png)
+
+Output > We'll save this final model in order to import it later.
+
+Streamlit
+-----
+We'll use this tool to create an app to predict the prices with the feature selection.
 
 
