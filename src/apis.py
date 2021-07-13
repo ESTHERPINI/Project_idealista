@@ -101,8 +101,3 @@ def api_idealista(api_key,secret_key,file_path):
     df_tot.to_csv(file_path, index=False)
     return df_tot
 
-# if __name__ == "__main__":
-#     path = r"C:\Users\sdelariva\OneDrive - KPMG\Desktop\PY\Clases_Particulares\Esther_Pinilla_lorenzo\idealista_project\Project\input\idealista.csv"
-#     API_KEY = "n421au7se73p0n67unk7u1h0jminlna9"
-#     SECRET_KEY = "lm2fMZK1dG0H"
-#     df = api_idealista(API_KEY, SECRET_KEY, path)
