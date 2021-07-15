@@ -32,7 +32,6 @@ beautifulsoup4=4.9.1=py38_0
 bitarray=1.4.0=py38he774522_0
 bkcharts=0.2=py38_0
 blas=1.0=mkl
-bleach=3.1.5=py_0
 blinker=1.4=pypi_0
 blis=0.7.4=pypi_0
 blosc=1.19.0=h7bd577a_0
