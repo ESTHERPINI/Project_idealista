@@ -68,7 +68,6 @@ confuse=1.4.0=pypi_0
 console_shortcut=0.1.1=4
 contextlib2=0.6.0.post1=py_0
 countryinfo=0.1.2=pypi_0
-cryptography=2.9.2=py38h7a1dbc1_0
 cufflinks=0.17.3=pypi_0
 curl=7.71.1=h2a8f88b_1
 cycler=0.10.0=py38_0
@@ -145,7 +144,6 @@ isort=4.3.21=py38_0
 itsdangerous=1.1.0=py_0
 jdcal=1.4.1=py_0
 jedi=0.17.1=py38_0
-jinja2=2.11.2=py_0
 joblib=0.16.0=py_0
 jpeg=9b=hb83a4c4_2
 json5=0.9.5=py_0
@@ -187,7 +185,6 @@ libxslt=1.1.34=he774522_0
 lightgbm=3.2.1=pypi_0
 llvmlite=0.33.0=py38ha925a31_0
 locket=0.2.0=py38_1
-lxml=4.5.2=py38h1350720_0
 lz4-c=1.9.2=h62dcd97_0
 lzo=2.10=he774522_2
 m2w64-gcc-libgfortran=5.3.0=6
@@ -227,7 +224,6 @@ nbformat=5.0.7=py_0
 networkx=2.5.1=pypi_0
 nltk=3.5=py_0
 nose=1.3.7=py38_2
-notebook=6.0.3=py38_0
 numba=0.50.1=py38h47e9c7a_0
 numexpr=2.7.1=py38h25d0782_0
 numpy=1.18.5=pypi_0
@@ -258,7 +254,6 @@ pep8=1.7.1=py38_0
 pexpect=4.8.0=py38_0
 phik=0.11.2=pypi_0
 pickleshare=0.7.5=py38_1000
-pillow=7.2.0=py38hcc1f983_0
 pip=20.1.1=py38_1
 pkginfo=1.5.0.1=py38_0
 plac=1.1.3=pypi_0
@@ -292,7 +287,6 @@ pyflakes=2.2.0=py_0
 pygam=0.8.0=pypi_0
 pygame=2.0.1=pypi_0
 pygeos=0.10=pypi_0
-pygments=2.6.1=py_0
 pyldavis=3.3.1=pypi_0
 pylint=2.5.3=py38_0
 pymongo=3.11.3=pypi_0
