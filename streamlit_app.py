@@ -627,17 +627,7 @@ if page == "Features and models":
         st.line_chart(df_random_plot)  
 
 
-        st.title("Model values!")
-
-        cols = st.beta_columns(8)
-        cols[0].write(f'{testing_score}')
-        cols[1].write(f'{training_score}')
-        cols[2].write(f'{cv_results_rms}')
-        cols[3].write(f'{adj_R2}')
-        cols[4].write(f'{MAE}')
-        cols[5].write(f'{MSE}')
-        cols[6].write(f'{RMSE}')
-        
+      
         
     #Sidebar
     st.sidebar.title("Madrid market detail")

@@ -85,3 +85,4 @@ Streamlit
 We'll use this tool to create an app to predict the prices with the feature selection.
 
 [PRESENTACION](https://docs.google.com/presentation/d/1RbawqZLKWmxdU4Mob2CB1LPXVvhfIVCuqtOGjZNP2eA/edit#slide=id.gc6f980f91_0_0)
+[* df uploaded in kaggle](https://www.kaggle.com/pinillalorenzoesther/idealista-madrid-dataset)
