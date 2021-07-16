@@ -186,7 +186,24 @@ if predictor=='LinearRegression':
     #RMSE
     RMSE_metrics=np.sqrt(metrics.mean_squared_error(y_test, pred))
     RMSE.append(RMSE_metrics.mean())
-    st.write("RMSE ","%s: %f " % ('LR', RMSE_metrics.mean()))    
+    st.write("RMSE ","%s: %f " % ('LR', RMSE_metrics.mean())) 
+
+    df_random = pd.DataFrame({'Actual': y_train, 'Predicted': y_pred})
+    df_random = df_random.sort_values('Actual')
+    st.write(df_random.head())
+    #Actual	vs Predicted
+    
+    st.header('Actual vs. Predicted prices- scatter & bars')
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=df_random.Actual,y=df_random.Predicted,
+                                 mode = 'markers',
+                                 name = 'Formerly_Smoked'))
+    st.plotly_chart(fig, use_container_width=True)
+
+
+    df_random_plot=df_random.sample(n=30, random_state=1)
+    st.line_chart(df_random_plot)
+
 
 
 
@@ -244,6 +261,22 @@ if predictor=='Ridge':
     RMSE.append(RMSE_metrics.mean())
     st.write("RMSE ","%s: %f " % (ridge, RMSE_metrics.mean()))    
 
+    df_random = pd.DataFrame({'Actual': y_train, 'Predicted': y_pred})
+    df_random = df_random.sort_values('Actual')
+    st.write(df_random.head())
+    #Actual	vs Predicted
+    
+    st.header('Actual vs. Predicted prices- scatter & bars')
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=df_random.Actual,y=df_random.Predicted,
+                                 mode = 'markers',
+                                 name = 'Formerly_Smoked'))
+    st.plotly_chart(fig, use_container_width=True)
+
+
+    df_random_plot=df_random.sample(n=30, random_state=1)
+    st.line_chart(df_random_plot)
+
 if predictor=='Lasso':
      
     lasso = Lasso(alpha = 0.01)
@@ -262,6 +295,10 @@ if predictor=='Lasso':
     lasso_training_score=lasso.score(X_train, y_train)*100
     training_score.append(lasso_training_score.mean())
     st.write("Training Accuracy: ", lasso.score(X_train , y_train)*100)
+
+    lasso_testing_score=lasso.score(X_test, y_test)*100
+    testing_score.append(lasso_testing_score.mean())
+    st.write("Testing Accuracy:" , lasso.score(X_test, y_test)*100)
 
     cv_score = cross_val_score(lasso, X_train,y_train,scoring="neg_root_mean_squared_error", cv=10)
     cv_results_rms.append(cv_score.mean())
@@ -293,6 +330,22 @@ if predictor=='Lasso':
     RMSE_metrics=np.sqrt(metrics.mean_squared_error(y_test, pred))
     RMSE.append(RMSE_metrics.mean())
     st.write("RMSE ","%s: %f " % (lasso, RMSE_metrics.mean()))  
+
+    df_random = pd.DataFrame({'Actual': y_train, 'Predicted': y_pred})
+    df_random = df_random.sort_values('Actual')
+    st.write(df_random.head())
+    #Actual	vs Predicted
+    
+    st.header('Actual vs. Predicted prices- scatter & bars')
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=df_random.Actual,y=df_random.Predicted,
+                                 mode = 'markers',
+                                 name = 'Formerly_Smoked'))
+    st.plotly_chart(fig, use_container_width=True)
+
+
+    df_random_plot=df_random.sample(n=30, random_state=1)
+    st.line_chart(df_random_plot)
 
 if predictor=='KneighborsRegressor':     
     KN = KNeighborsRegressor()
@@ -345,4 +398,89 @@ if predictor=='KneighborsRegressor':
     #RMSE
     RMSE_metrics=np.sqrt(metrics.mean_squared_error(y_test, pred))
     RMSE.append(RMSE_metrics.mean())
-    st.write("RMSE ","%s: %f " % (KN, RMSE_metrics.mean()))    
+    st.write("RMSE ","%s: %f " % (KN, RMSE_metrics.mean()))   
+
+    df_random = pd.DataFrame({'Actual': y_train, 'Predicted': y_pred})
+    df_random = df_random.sort_values('Actual')
+    st.write(df_random.head())
+    #Actual	vs Predicted
+    
+    st.header('Actual vs. Predicted prices- scatter & bars')
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=df_random.Actual,y=df_random.Predicted,
+                                 mode = 'markers',
+                                 name = 'Formerly_Smoked'))
+    st.plotly_chart(fig, use_container_width=True)
+
+
+    df_random_plot=df_random.sample(n=30, random_state=1)
+    st.line_chart(df_random_plot) 
+
+if predictor=='Bayesian':     
+    bayesian = BayesianRidge()
+    bayesian.fit(X_train, y_train)
+    y_pred=bayesian.predict(X_train)  
+
+    testing_score=[]
+    training_score=[]
+    cv_results_rms = []
+    R2=[]
+    adj_R2=[]
+    MAE=[]
+    MSE=[]
+    RMSE=[]
+    
+    bayesian_training_score=bayesian.score(X_train, y_train)*100
+    training_score.append(bayesian_training_score.mean())
+    st.write("Training Accuracy: ", bayesian.score(X_train , y_train)*100)
+
+    bayesian_testing_score=bayesian.score(X_test, y_test)*100
+    testing_score.append(bayesian_testing_score.mean())
+    st.write("Testing Accuracy:" , bayesian.score(X_test, y_test)*100)
+
+    cv_score = cross_val_score(bayesian, X_train,y_train,scoring="neg_root_mean_squared_error", cv=10)
+    cv_results_rms.append(cv_score.mean())
+    st.write("cross_val ","%s: %f " % ('bayesian', cv_score.mean()))
+
+    pred = bayesian.predict(X_test)
+
+    #R2
+    R2_metrics=metrics.r2_score(y_test, pred)
+    R2.append(R2_metrics.mean())
+    st.write("R2 ","%s: %f " % (bayesian,  R2_metrics.mean()))
+
+    #adj_R2
+    adj_R2_metrics=(1 - (1-metrics.r2_score(y_test, pred))*(len(y_test)-1)/(len(y_test)-X_test.shape[1]-1))
+    adj_R2.append(adj_R2_metrics.mean())
+    st.write("adj_R2 ","%s: %f " % (bayesian,  adj_R2_metrics.mean()))   
+
+    #MAE
+    MAE_metrics=metrics.mean_absolute_error(y_test, pred)
+    MAE.append(MAE_metrics.mean())
+    st.write("MAE", "%s: %f " % (bayesian,  MAE_metrics.mean()))  
+
+    #MSE    
+    MSE_metrics=metrics.mean_squared_error(y_test, pred)
+    MSE.append(MSE_metrics.mean())
+    st.write("MSE ","%s: %f " % (bayesian,  MSE_metrics.mean()))
+
+    #RMSE
+    RMSE_metrics=np.sqrt(metrics.mean_squared_error(y_test, pred))
+    RMSE.append(RMSE_metrics.mean())
+    st.write("RMSE ","%s: %f " % (bayesian, RMSE_metrics.mean()))  
+
+    df_random = pd.DataFrame({'Actual': y_train, 'Predicted': y_pred})
+    df_random = df_random.sort_values('Actual')
+    st.write(df_random.head())
+    #Actual	vs Predicted
+    
+    st.header('Actual vs. Predicted prices- scatter & bars')
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=df_random.Actual,y=df_random.Predicted,
+                                 mode = 'markers',
+                                 name = 'Formerly_Smoked'))
+    st.plotly_chart(fig, use_container_width=True)
+
+
+    df_random_plot=df_random.sample(n=30, random_state=1)
+    st.line_chart(df_random_plot)  
