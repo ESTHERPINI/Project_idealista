@@ -176,7 +176,7 @@ if page == "Features and models":
     st.sidebar.title("FEATURES EXPLORE")
     option = st.sidebar.selectbox("which value?", ('size vs. price','rooms vs. bathrooms','numPhotos', 'floor', 'size', 'rooms', 'bathrooms', 'hasLift'))
 
-    # st.header(option)
+    
 
     if option == 'numPhotos':
         fig1 = px.histogram(df, x='numPhotos')
@@ -334,6 +334,7 @@ if page == "Features and models":
         st.write(df_random.head())
         #Actual	vs Predicted
         
+                
         st.header('Actual vs. Predicted prices- scatter & bars')
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=df_random.Actual,y=df_random.Predicted,
@@ -634,7 +635,7 @@ if page == "Features and models":
     option = st.sidebar.selectbox("which Dashboard?", ('properties by district',
     'type of property on sale', 'property is exterior', 'property has parking space',"population"))
 
-    # st.header(option)
+    st.title('MADRID MARKET')
 
     if option == 'properties by district':
         fig1 = px.histogram(data, x='district')
