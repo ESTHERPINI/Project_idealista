@@ -1,2 +1,4 @@
 Idealista.py
 idealista api access.msg
+**/*.ipynb_checkpoints/
+**/*__pycache__
